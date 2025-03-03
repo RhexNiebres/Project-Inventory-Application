@@ -1,12 +1,12 @@
 const express = require ('express');
 const app = express();
-const usersRouter = require("./routes/userRouter");
+const pokemonRouter = require("./routes/pokemonRouter");
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
-app.use("/", usersRouter);
+app.use("/", pokemonRouter);
 
 
   
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Express app listening on port ${PORT}!`));
