@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <form action="/trainer/update/<%= trainer.id %>" method="POST">
+        <input type="text" name="name" value="<%= trainer.name %>" required>
+        <input type="text" name="region" value="<%= trainer.region %>" required>
+        <button type="submit">Save Changes</button>
+    </form>    
+</body>
+</html>
