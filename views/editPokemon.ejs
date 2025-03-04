@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<form action="/pokemon/update/<%= pokemon.id %>" method="POST">
+    <label for="name">Pokémon Name:</label>
+    <input type="text" name="name" value="<%= pokemon.name %>" required>
+    
+    <label for="types">Types:</label>
+    <select name="types[]" id="types" multiple required>
+        <% ['Electric', 'Normal', 'Rock', 'Water', 'Psychic', 'Ground'].forEach(function(type) { %>
+            <option value="<%= type %>" 
+            <% if (pokemon.types.includes(type)) { %> selected <% } %>>
+                <%= type %>
+            </option>
+        <% }); %>
+    </select>
+    
+    <button type="submit">Save Changes</button>
+</form>
+
+</body>
+</html>
