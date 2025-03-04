@@ -16,4 +16,8 @@ router.post("/pokemon/update/:id", pokemonTrainerController.postUpdatePokemon);
 router.get("/trainer/edit/:id", pokemonTrainerController.getEditTrainer);
 router.post("/trainer/update/:id", pokemonTrainerController.postUpdateTrainer);
 
+router.post("/pokemon/delete/:id", pokemonTrainerController.postDeletePokemon);
+router.post("/trainers/delete/:id", pokemonTrainerController.postDeleteTrainer);
+
+
 module.exports = router;
