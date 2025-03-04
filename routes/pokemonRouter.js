@@ -5,7 +5,15 @@ const pokemonTrainerController = require('../controllers/pokemonTrainerControlle
 router.get('/', pokemonTrainerController.getIndex)
 router.get('/pokemon', pokemonTrainerController.getPokemons);
 router.get('/trainers', pokemonTrainerController.getTrainers);
+
 router.post('/pokemon/add', pokemonTrainerController.postAddPokemon);
 router.post('/trainer/add', pokemonTrainerController.postAddTrainer);
+
+router.get("/pokemon/edit/:id", pokemonTrainerController.getEditPokemon);
+router.post("/pokemon/update/:id", pokemonTrainerController.postUpdatePokemon);
+
+
+router.get("/trainer/edit/:id", pokemonTrainerController.getEditTrainer);
+router.post("/trainer/update/:id", pokemonTrainerController.postUpdateTrainer);
 
 module.exports = router;
