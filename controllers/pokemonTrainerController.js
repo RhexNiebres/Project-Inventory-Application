@@ -13,7 +13,7 @@ const trainers = [
 ];
 
 exports.getIndex = (req, res) => {
-    res.render('index', { title: "Welcome to Pokémon World" });
+    res.render('index', { title: "Welcome to PokéVualt" });
 };
 
 exports.getPokemons= (req, res) => {
@@ -22,5 +22,25 @@ exports.getPokemons= (req, res) => {
 
 exports.getTrainers = (req, res) => {
     res.render('trainers', { trainers });
+};
+
+exports.getAddPokemon = (req, res) =>{
+    res.render('addPokemon')
+}
+
+exports.postAddPokemon = (req, res) => {
+    const { name, type } = req.body;
+    pokemons.push({ id: pokemons.length + 1, name, type });
+    res.redirect('/pokemon');
+};
+
+exports.getAddTrainer = (req, res) =>{
+    res.render('addTrainers')
+}
+
+exports.postAddTrainer = (req, res) => {
+    const { name, region } = req.body;
+    trainers.push({ id: trainers.length + 1, name, region });
+    res.redirect('/trainers');
 };
 
