@@ -11,5 +11,5 @@ app.use("/", pokemonRouter);
 
 
   
-const PORT = process.env.PORT;
+const PORT = process.env.APP_PORT;
 app.listen(PORT, () => console.log(`Express app listening on port ${PORT}!`));
