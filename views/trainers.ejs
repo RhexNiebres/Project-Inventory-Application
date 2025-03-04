@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trainer List</title>
+  </head>
+  <body>
+    <%- include('partials/header') %>
+    <h1>Trainer List</h1>
+    <ul>
+      <% trainers.forEach(trainer => { %>
+      <li>
+        <strong><%= trainer.name %></strong> - Region: <%= trainer.region %>
+        <ul>
+          <% trainer.pokemons.forEach(pokemon => { %>
+          <li><%= pokemon.name %></li>
+          <% }); %>
+        </ul>
+        <a href="/trainer/edit/<%= trainer.id %>">
+          <button>Update</button>
+        </a>
+        <form action="/trainers/delete/<%= trainer.id %>" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+      <% }); %>
+    </ul>
+    <%- include('partials/addTrainers') %>
+  </body>
+</html>
