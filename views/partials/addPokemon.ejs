@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Add a Pokémon</h1>
+    
+    <form action="/pokemon/add" method="POST">
+        <label for="name">Pokémon Name:</label>
+        <input type="text" name="name" id="name" required>
+        
+        <label for="types">Types:</label>
+        <select name="types[]" id="types" multiple required>
+            <% ['Electric', 'Normal', 'Rock', 'Water', 'Psychic', 'Ground'].forEach(function(type) { %>
+                <option value="<%= type %>">
+                    <%= type %>
+                </option>
+            <% }); %>
+        </select>
+
+        <button type="submit">Add Pokémon</button>
+    </form>
+
+    <a href="/add">Back</a>
+</body>
+</html>
